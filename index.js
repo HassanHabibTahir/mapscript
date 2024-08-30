@@ -42,6 +42,7 @@ function myMap() {
                 position: tree.location,
                 map: map,
                 title: `Year: ${year}, Value: ${tree.value}, Total Trees: ${tree.TotalTrees}`,
+                icon:"marker.png"
             });
             totalTreesPerYear[year] += tree.TotalTrees;
         });
