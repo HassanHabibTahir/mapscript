@@ -26,10 +26,13 @@ function myMap() {
         ],
         2020: [
             { location: { lat: 48.856613, lng: 2.352222 }, value: 30, TotalTrees: 30 },
-            { location: { lat: 39.904202, lng: 116.407394 }, value: 35, TotalTrees: 35 },
+            { location: { lat: -37.904202, lng: 116.407394 }, value: 35, TotalTrees: 35 },
         ],
         2024: [
             { location: { lat: 0.0, lng: 0.0 }, value: 500, TotalTrees: 500 },
+            { location: { lat: -34.397, lng: 150.644 }, value: 600, TotalTrees: 600 },
+            { location: { lat: -37.8136, lng: 144.9631 }, value: 700, TotalTrees: 700 },
+            { location: { lat: -36.8485, lng: 174.7633 }, value: 800, TotalTrees: 800 },
         ],
     };
 
@@ -42,7 +45,16 @@ function myMap() {
                 position: tree.location,
                 map: map,
                 title: `Year: ${year}, Value: ${tree.value}, Total Trees: ${tree.TotalTrees}`,
-                icon:"marker.png"
+                icon: {
+                    url: "marker.png",
+                    labelOrigin: new google.maps.Point(35, 50) 
+                },
+                label: {
+                    text: `\n\n\n\n\n\n\n\n ${tree.value}`,
+                    fontSize: "1.2rem",
+                    fontWeight: "bold",
+                    
+                }
             });
             totalTreesPerYear[year] += tree.TotalTrees;
         });
